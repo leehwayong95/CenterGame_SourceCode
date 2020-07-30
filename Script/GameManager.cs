@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
@@ -126,21 +125,10 @@ public class GameManager : MonoBehaviour
             names[6] = "덕용";
             names[7] = "형미";
 
-            return names[UnityEngine.Random.Range(0, names.Length)];
+            return names[UnityEngine.Random.Range(0,names.Length)];
         }
     }
 
-    public void changeNickname()
-    {
-        GameObject Gcanvas = GameObject.Find("InputNicknameCanvas");
-        Canvas canvas = GameObject.Find("InputNicknameCanvas").GetComponent<Canvas>();
-        Text Nickname = canvas.GetComponentInChildren<InputField>().GetComponentInChildren<Text>();
-        EmployeeControl player = GameObject.Find("Player").GetComponent<EmployeeControl>();
-        Canvas nextCanvs = GameObject.Find("Logo").GetComponent<Canvas>();
-        
-        player.setName(Nickname.text);
 
-        Gcanvas.SetActive(false);
-        nextCanvs.enabled = true;
-    }
+    //IEnumerator showPanel_Gauge()
 }
